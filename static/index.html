@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenGrid 光影镜</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">OPEN GRID / 24 × 32</p>
+          <h1>光影镜</h1>
+          <p class="subtitle">树莓派摄像头的实时剪影，以16级灰度映射到12块灯板。</p>
+        </div>
+        <div class="status-pill"><span id="statusDot"></span><span id="statusText">连接中</span></div>
+      </header>
+
+      <section class="stage" aria-label="24乘32 LED 灯板模拟">
+        <canvas id="ledCanvas" width="720" height="960"></canvas>
+        <div class="board-lines" aria-hidden="true"></div>
+        <div class="board-labels" aria-hidden="true">
+          <span>1000 · 0x27</span><span>0100 · 0x2B</span><span>0000 · 0x2F</span>
+          <span>1001 · 0x26</span><span>0101 · 0x2A</span><span>0001 · 0x2E</span>
+          <span>1010 · 0x25</span><span>0110 · 0x29</span><span>0010 · 0x2D</span>
+          <span>1011 · 0x24</span><span>0111 · 0x28</span><span>0011 · 0x2C</span>
+        </div>
+      </section>
+
+      <section class="metrics" aria-live="polite">
+        <div><span>帧率</span><strong id="fps">--</strong><small>fps</small></div>
+        <div><span>前景占比</span><strong id="area">--</strong><small>%</small></div>
+        <div><span>摄像头</span><strong id="camera">--</strong></div>
+        <div><span>输出</span><strong id="output">--</strong></div>
+      </section>
+
+      <section class="controls">
+        <div class="control-head">
+          <div>
+            <p class="eyebrow">调试台</p>
+            <h2>动态参数</h2>
+          </div>
+          <div class="actions">
+            <button id="demoButton" type="button">测试动画</button>
+            <button id="calibrateButton" class="primary" type="button">重新采集背景</button>
+          </div>
+        </div>
+        <div class="control-grid">
+          <label>
+            <span>前景阈值 <output id="thresholdValue">40</output></span>
+            <input id="threshold" type="range" min="5" max="100" value="40" />
+          </label>
+          <label>
+            <span>渐亮 <output id="riseValue">160 ms</output></span>
+            <input id="rise" type="range" min="30" max="800" step="10" value="160" />
+          </label>
+          <label>
+            <span>渐暗 <output id="fallValue">550 ms</output></span>
+            <input id="fall" type="range" min="80" max="2000" step="10" value="550" />
+          </label>
+          <label>
+            <span>最大亮度 <output id="brightnessValue">12 / 15</output></span>
+            <input id="brightness" type="range" min="1" max="15" value="12" />
+          </label>
+        </div>
+        <p id="message" class="message">剪影外保持熄灯；按下任意灯板按键会触发有阻尼的多层涟漪，并同步扰动摄像头剪影的亮度。启动时请保持画面内无人。</p>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

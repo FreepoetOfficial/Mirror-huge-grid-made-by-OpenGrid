@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenGrid thermal protection
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 __APP_DIR__/thermal_guard.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

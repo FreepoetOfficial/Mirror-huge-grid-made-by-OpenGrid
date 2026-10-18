@@ -1,0 +1,14 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+config.json
+config.deployed.json
+*.log
+*.tar
+*.tar.gz
+*.zip
+wheels/

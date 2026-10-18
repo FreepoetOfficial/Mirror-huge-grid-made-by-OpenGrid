@@ -1,0 +1,1 @@
+"""OpenGrid realtime silhouette package."""
