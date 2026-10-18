@@ -1,10 +1,11 @@
 # Mirror — A 24×32 Interactive Light Wall Made from 12 OpenGrid Boards
 
-## Demo video
+## Demo videos
 
-[![Basic OpenGrid light-mapping demo](https://img.youtube.com/vi/S3AoeYm2MAg/hqdefault.jpg)](https://youtube.com/shorts/S3AoeYm2MAg?si=n04Qq9E_cPv2Y_jr)
-
-**[Watch the YouTube Shorts demonstration](https://youtube.com/shorts/S3AoeYm2MAg?si=n04Qq9E_cPv2Y_jr).** It shows the installation's simplest camera-to-light mapping behavior before the additional brightness, smoothing, residual-removal, and key-ripple effects described below.
+| Basic camera-to-light mapping | Interactive key-triggered ripples |
+|---|---|
+| [![Basic OpenGrid light-mapping demo](https://img.youtube.com/vi/S3AoeYm2MAg/hqdefault.jpg)](https://youtube.com/shorts/S3AoeYm2MAg?si=n04Qq9E_cPv2Y_jr) | [![OpenGrid key-triggered ripple interaction demo](https://img.youtube.com/vi/S3y3qXCOvF0/hqdefault.jpg)](https://youtube.com/shorts/S3y3qXCOvF0?si=EquKrBtFXCHlsYFg) |
+| **[Watch the basic mapping demo](https://youtube.com/shorts/S3AoeYm2MAg?si=n04Qq9E_cPv2Y_jr)** — the camera silhouette is mapped directly onto the 24×32 light wall. | **[Watch the interactive ripple demo](https://youtube.com/shorts/S3y3qXCOvF0?si=EquKrBtFXCHlsYFg)** — pressing an illuminated OpenGrid key creates a light ripple centered on that key. The rings expand, fade away, and interact with the live mirror silhouette by modulating its brightness as the wave passes through it. |
 
 This project turns the closest visible person or object in a Raspberry Pi camera image into a live 24×32 light silhouette. The image is displayed on twelve official FREEPOET OpenGrid boards arranged as a 3-column × 4-row wall. Pressing any key produces a damped, multi-ring ripple centered on that LED; the ripple remains visible on a dark background and also bends the brightness of the live camera silhouette without interrupting camera tracking.
 
