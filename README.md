@@ -1,5 +1,11 @@
 # Mirror — A 24×32 Interactive Light Wall Made from 12 OpenGrid Boards
 
+## Demo video
+
+[![Basic OpenGrid light-mapping demo](https://img.youtube.com/vi/S3AoeYm2MAg/hqdefault.jpg)](https://youtube.com/shorts/S3AoeYm2MAg?si=n04Qq9E_cPv2Y_jr)
+
+**[Watch the YouTube Shorts demonstration](https://youtube.com/shorts/S3AoeYm2MAg?si=n04Qq9E_cPv2Y_jr).** It shows the installation's simplest camera-to-light mapping behavior before the additional brightness, smoothing, residual-removal, and key-ripple effects described below.
+
 This project turns the closest visible person or object in a Raspberry Pi camera image into a live 24×32 light silhouette. The image is displayed on twelve official FREEPOET OpenGrid boards arranged as a 3-column × 4-row wall. Pressing any key produces a damped, multi-ring ripple centered on that LED; the ripple remains visible on a dark background and also bends the brightness of the live camera silhouette without interrupting camera tracking.
 
 The repository contains the complete Raspberry Pi application, browser simulator, OpenGrid I²C driver, key/ripple interaction, thermal protection, automatic startup configuration, tests, and installation documentation.
